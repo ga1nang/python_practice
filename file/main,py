@@ -1,0 +1,21 @@
+lst_data = [data for data in range(1, 11)]
+
+f = open("data.txt", "w")
+for i in lst_data:
+  if i < 10:
+    f.write(str(i) + "-")
+  else:
+    f.write(str(i))
+f.close()
+
+f = open("data.txt", "r")
+print(f.read())
+f.close()
+
+with open("data.txt", "r") as f:
+  data = f.read()
+
+data = data.split("-")
+data = [int(i) for i in data]
+lst_filter = [i for i in data if i % 3 == 0]
+lst_filter
